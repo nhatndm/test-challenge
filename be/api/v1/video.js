@@ -6,7 +6,7 @@ exports.getAllVideos = (req, res, next) => {
 
   const data = db.videos;
 
-  const filterData = _.filter(_.orderBy(data, ['view'], ['asc']), (v, i) => i < 10)
+  const filterData = _.filter(_.orderBy(data, ['view'], ['desc']), (v, i) => i < 10)
 
   res.status(200).json(filterData)
 }
